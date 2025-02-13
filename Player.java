@@ -67,24 +67,9 @@ public class Player {
     }
 
     //Attacking the enemy using the last added item from the inventory
-    public void attack(Enemy enemy) {
-        if (inventorySize == 0) {
-            System.out.println(name + " has no items to attack with");
-            return;
-        }
-        String weapon = inventory[inventorySize - 1]; //using the last added weapon or item
-        int damage = 10; //Default weapon damage
-        enemy.takeDamage(damage); //Inflict damage on enemy
-        System.out.println(name + " attacks " + enemy.getName() + " with " + weapon + " for " + damage + " damage");
-    }
+    
     //Reducing the knight's health when taken damage
-    public void takeDamage(int amount) {
-        health -= amount;
-        if (health < 0) {
-            health = 0;
-        }
-        System.out.println(name + " takes " + amount + " damage. Remaining health: " + health);
-    }
+    
     //Check to see if the knight is defeated (is health below 0)
     public boolean isDefeated() {
         return health<=0;
